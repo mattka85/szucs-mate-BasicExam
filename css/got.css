@@ -5,6 +5,8 @@ body {background-image: url("/assets/site/mapblue.jpg")};
     width: 330px;
 }
 .container {
+    display: inline-block;
+    position: relative;
     height: 220px;
     width: 220px;
 }
@@ -15,4 +17,14 @@ body {background-image: url("/assets/site/mapblue.jpg")};
     position: absolute;
     z-index: 2;
     right: 0px;
+}
+.searchbar{
+    position: fixed;
+    margin-left: 7%;
+    bottom: 5%;
+}
+.button{
+    position: fixed;
+    margin-left: 11%;
+    bottom: 1%;
 }

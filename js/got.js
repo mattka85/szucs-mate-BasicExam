@@ -42,11 +42,20 @@ function successAjax(xhttp) {
     }
     
     function generateCharacters(characters) {
-        var container = document.getElementById('sor')
+        var container = document.getElementById('sor');
         container.innerHTML = '';
         for (var k = 0; k < characters.length; k++) {
             container.innerHTML += `<div class ="container"><img src = "${characters[k].portrait}">
                                     <p>${characters[k].name}</p>
-                                    </div>`
+                                    </div>`;
         }
     }
+    document.getElementById("info").addEventListener("click", function(){
+var sideElement = document.getElementsByClassName('side');
+sideElement.innerHTML = '';
+for (g in characters){
+
+if (characters[g].name = info)
+container.innerHTML
+}
+    })
