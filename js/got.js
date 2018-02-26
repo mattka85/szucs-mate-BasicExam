@@ -9,6 +9,7 @@ function getData(url, callbackFunc) {
     xhttp.send();
 }
 
+
 function successAjax(xhttp) {
     // itt a json content, benne a data változóban
     var userDatas = JSON.parse(xhttp.responseText);
@@ -22,10 +23,30 @@ function successAjax(xhttp) {
       A userDatas NEM GLOBÁLIS változó, ne is tegyétek ki globálisra. Azaz TILOS!
       Ha valemelyik függvényeteknek kell, akkor paraméterként adjátok át.
     */
+   generateLiving(userDatas);    
 }
+    // Írd be a json fileod nevét/útvonalát úgy, ahogy nálad van
+    getData('/json/got.json', successAjax);
 
-// Írd be a json fileod nevét/útvonalát úgy, ahogy nálad van
-getData('/json/aJsonFileodNeve.json', successAjax);
-
-// Live servert használd mindig!!!!!
-/* IDE ÍRD A FÜGGVÉNYEKET!!!!!! NE EBBE AZ EGY SORBA HANEM INNEN LEFELÉ! */
+    // Live servert használd mindig!!!!!
+    /* IDE ÍRD A FÜGGVÉNYEKET!!!!!! NE EBBE AZ EGY SORBA HANEM INNEN LEFELÉ! */
+    
+    function generateLiving(characters) {
+       var livingCharacters = [];
+        for (var j = 0; j < characters.length; j++) {
+            if (characters[j].dead !== true) {
+                livingCharacters.push(characters[j]);
+            }
+        }
+        generateCharacters(livingCharacters);
+    }
+    
+    function generateCharacters(characters) {
+        var container = document.getElementById('sor')
+        container.innerHTML = '';
+        for (var k = 0; k < characters.length; k++) {
+            container.innerHTML += `<div class ="container"><img src = "${characters[k].portrait}">
+                                    <p>${characters[k].name}</p>
+                                    </div>`
+        }
+    }

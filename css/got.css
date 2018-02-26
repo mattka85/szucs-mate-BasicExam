@@ -1,0 +1,18 @@
+body {background-image: url("/assets/site/mapblue.jpg")};
+#container {
+    display: inline-block;
+    height: 330px;
+    width: 330px;
+}
+.container {
+    height: 220px;
+    width: 220px;
+}
+.side {
+    width: 350px;
+    height: 100%;
+    background: dimgray;
+    position: absolute;
+    z-index: 2;
+    right: 0px;
+}
